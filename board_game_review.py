@@ -5,9 +5,9 @@ from sklearn.model_selection import train_test_split
 
 games  = pd.read_csv("games.csv")
 
-#plt.hist(games["average_rating"])
+plt.hist(games["average_rating"])
 
-#print(games[games["average_rating"]==0].iloc[0])
+print(games[games["average_rating"]==0].iloc[0])
 
 print(games[games["average_rating"] > 0].iloc[0])
 
@@ -16,7 +16,7 @@ games=games[games["users_rated"] > 0]
 games = games.dropna(axis=0)
 
 plt.hist(games["average_rating"])
-#plt.show()
+plt.show()
 print(games.columns)
 
 #correlationm matrix
@@ -26,7 +26,7 @@ cormat = games.corr()
 fig = plt.figure(figsize = (12,9))
 
 sns.heatmap(cormat, vmax= .8, square = True)
-#plt.show()
+plt.show()
 
 columns= games.columns.tolist()
 
